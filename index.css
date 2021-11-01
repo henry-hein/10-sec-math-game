@@ -1,1 +1,44 @@
+body {
+  font-size: 30px;
+  color:rgb(253, 138, 153);
+  margin: 0;
+}
+
+h2 {
+  font-size: 60px;
+  color: rgb(215, 167, 255);
+}
+
+.gameConsole {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.operators {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  margin-top: 0;
+}
+
+
+
+
+.checkbox input[type='checkbox']{
+  width: 20px;
+  height: 20px;
+}
+
+
+
+
+
+
 
