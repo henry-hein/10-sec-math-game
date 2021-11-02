@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width">
     <title>10 Sec Maths Game</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <link href="index.css" rel="stylesheet" type="text/css" />
     <script src="index.js"></script>
   </head>
@@ -23,9 +23,9 @@
             <div class="timer"><span class='time'>10</span> seconds left</div>
             <br>
             <div class='numbers'>
-              <span class='random1'>5</span>
-              <span class="operator"></span>
-              <span class='random2'>5</span>
+              <span id='num1'></span>
+              <span class="operator">+</span>
+              <span id='num2'></span>
             </div>
             <br>
             <div class=''>
@@ -33,19 +33,19 @@
             </div>
             <div class='operators'>
               <div class="checkbox">
-                <input type="checkbox" name="checkbox" class=''>
+                <input type="checkbox" name="checkbox" class="plus check">
                 <label for="checkbox">+</label>
               </div>
               <div class="checkbox">
-                <input type="checkbox" name="checkbox" class=''>
+                <input type="checkbox" name="checkbox" class="minus check">
                 <label for="checkbox">-</label>
               </div>
               <div class="checkbox">
-                <input type="checkbox" name="checkbox" class=''>
+                <input type="checkbox" name="checkbox" class="multiply check">
                 <label for="checkbox">x</label>
               </div>
               <div class="checkbox">
-                <input type="checkbox" name="checkbox" class=''>
+                <input type="checkbox" name="checkbox" class="divide check">
                 <label for="checkbox">&#247</label>
               </div>
             </div>
