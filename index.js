@@ -7,6 +7,9 @@ $(document).ready(function(){
   var userInput = {};
   var operator;
   var total = {};
+  var time = 10;
+  var interval;
+  var score = 0;
 
   // Generate number from 1 to 10
   var numberGenerator = function () {
@@ -49,6 +52,41 @@ $(document).ready(function(){
     return answer;
   }
 
+  // Update Time
+
+  var updateTimeLeft = function (amount) {
+    time += amount;
+    $('.time').text(time);
+  }
+
+  // Update Score
+  var updateScore = function(amount){
+    score += amount;
+    $('.score').text(score);
+  }
+  
+  // Game restart function
+  var startGame = function () {
+    if (!interval) {
+      if (time === 0) {
+        console.log('hello');
+        updateTimeLeft(10);
+      }
+      interval = setInterval(function () {
+        updateTimeLeft(-1);
+        if (time === 0) {
+          clearInterval(interval);
+          interval = undefined;
+          updateTimeLeft(10);
+          updateScore(-score);
+          $('.output').text('');
+          startGame();
+        }
+      }, 1000);  
+    }
+  }
+
+
   $('.check').click(function() {
     $('.check').not($(this)).prop('checked', false);
   });
@@ -87,28 +125,34 @@ $(document).ready(function(){
   });
 
   $(document).on('change', '.userInput', function() {
-    window.setTimeout(function() {
+      startGame();
       userInput.answer = ($('.userInput').val());
       if(Number(userInput.answer) === total.plus){
-        console.log('+');
+        updateTimeLeft(+1);
+        updateScore(+1);
         $('.userInput').val('');
+        $('.output').text('Correct!');
       } else if (Number(userInput.answer) === total.minus){
-        console.log('-');
+        updateTimeLeft(+1);
+        updateScore(+1);
         $('.userInput').val('');
+        $('.output').text('Correct!');
       } else if (Number(userInput.answer) === total.multiply){
-        console.log('*');
+        updateTimeLeft(+1);
+        updateScore(+1);
         $('.userInput').val('');
+        $('.output').text('Correct!');
       } else if (Number(userInput.answer) === total.divide){
-        console.log('/');
+        updateTimeLeft(+1);
+        updateScore(+1);
         $('.userInput').val('');
+        $('.output').text('Correct!');
       } else {
-        console.log('bye');
         $('.userInput').val('');
+        $('.output').css("color", "red");
+        $('.output').text('Wrong Answer!');
       } 
-    }, 1);
   });
 
-
-  $('.plus').trigger('click');
-    
+  $('.plus').trigger('click');  
 });
