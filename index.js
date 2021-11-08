@@ -132,21 +132,25 @@ $(document).ready(function(){
         updateScore(+1);
         $('.userInput').val('');
         $('.output').text('Correct!');
+        total.plus = calculateTotal();
       } else if (Number(userInput.answer) === total.minus){
         updateTimeLeft(+1);
         updateScore(+1);
         $('.userInput').val('');
         $('.output').text('Correct!');
+        total.minus = calculateTotal();
       } else if (Number(userInput.answer) === total.multiply){
         updateTimeLeft(+1);
         updateScore(+1);
         $('.userInput').val('');
         $('.output').text('Correct!');
+        total.multiply = calculateTotal();
       } else if (Number(userInput.answer) === total.divide){
         updateTimeLeft(+1);
         updateScore(+1);
         $('.userInput').val('');
         $('.output').text('Correct!');
+        total.divide = calculateTotal();
       } else {
         $('.userInput').val('');
         $('.output').css("color", "red");
